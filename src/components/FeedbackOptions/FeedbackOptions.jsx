@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 
 class FeedbackOptions extends React.Component {
     render() {
-        const {options, onLeaveFeedback} = this.props;
+        const { goodIncrease, neutralIncrease, badIncrease } = this.props;
         return (
             <div>
                 <div style={{ display: 'flex' }}>
-                    <button onClick={() => {onLeaveFeedback(options[0])}}>Good</button>
-                    <button onClick={() => {
-                        onLeaveFeedback(options[1])
-                    }}>Neutral</button>
-                    <button onClick={() => {
-                        onLeaveFeedback(options[2])
-                    }}>Bad</button>
+                    <button onClick={goodIncrease}>Good</button>
+                    <button onClick={
+                        neutralIncrease
+                    }>Neutral</button>
+                    <button onClick={
+                        badIncrease
+                    }>Bad</button>
                 </div>
             </div>
         )
@@ -22,8 +22,9 @@ class FeedbackOptions extends React.Component {
 };
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.array.isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired
+    goodIncrease: PropTypes.func.isRequired,
+    neutralIncrease: PropTypes.func.isRequired,
+    badIncrease: PropTypes.func.isRequired
 };
 
 export default FeedbackOptions
