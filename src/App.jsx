@@ -13,7 +13,7 @@ export const App = () => {
         fontSize: '50px',
         color: '#010101',
       }}>
-      <Feedback />
+      <Feedback/>
     </div>
   );
 }
